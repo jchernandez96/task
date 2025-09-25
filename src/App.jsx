@@ -15,19 +15,46 @@ function App() {
 
   return (
     <>
-      <div className='container m-2'>
-        <label className='col-md-3'>Nombre Tarea
-          <input type="text" className='form-control' value={tarea} onChange={(e) => setTarea(e.target.value)} placeholder='Tarea a Realizar' />
-        </label>
-        <label className='col-md-3'>Responsable
-          <input type="text" className='form-control' value={responsable} onChange={(e) => setResponsable(e.target.value)} placeholder='Quien Realiza' />
-        </label>
-        <label className='col-md-3'>Fecha
-          <input type="date" className='form-control' value={fecha} onChange={(e) => setFecha(e.target.value)} placeholder='Fecha a Realizar' />
-        </label>
-        <label className='col-md-3'>
-          <input type="button" value="Agregar" onClick={()=>{agregarDatos()}} className='btn btn-success' />
-        </label>
+      <div className='container mt-4'>
+        <div className='row'>
+          <div className='col-md-3 mb-3'>
+            <label>Nombre Tarea</label>
+            <input
+              type="text"
+              className='form-control'
+              value={tarea}
+              onChange={(e) => setTarea(e.target.value)}
+              placeholder='Tarea a Realizar'
+            />
+          </div>
+          <div className='col-md-3 mb-3'>
+            <label>Responsable</label>
+            <input
+              type="text"
+              className='form-control'
+              value={responsable}
+              onChange={(e) => setResponsable(e.target.value)}
+              placeholder='Quien Realiza'
+            />
+          </div>
+          <div className='col-md-3 mb-3'>
+            <label>Fecha</label>
+            <input
+              type="date"
+              className='form-control'
+              value={fecha}
+              onChange={(e) => setFecha(e.target.value)}
+            />
+          </div>
+          <div className='col-md-3 d-flex align-items-end mb-3'>
+            <button
+              onClick={agregarDatos}
+              className='btn btn-success w-100'
+            >
+              Agregar
+            </button>
+          </div>
+        </div>
       </div>
       <div className='container'>
         <table className='table table-hover'>
