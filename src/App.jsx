@@ -9,8 +9,13 @@ function App() {
   const [datos, setDatos] = useState([]);
 
   let agregarDatos = () => {
-    let dat = { "tarea": tarea, "responsable": responsable, "fecha": fecha, "Estado":"Pendiente"};
+    let dat = { "tarea": tarea, "responsable": responsable, "fecha": fecha, "Estado":"Pendiente", "Borrar":""};
     setDatos([...datos, dat]);
+  }
+
+  let borrarDato = (i) => {
+    let nuevoDatos = datos.filter((v, index) => index !== i);
+    setDatos(nuevoDatos);
   }
 
   return (
@@ -64,6 +69,7 @@ function App() {
               <th>Responsable</th>
               <th>Fecha</th>
               <th>Estado</th>
+              <th>Acciones</th>
             </tr>
           </thead>
           <tbody>
@@ -74,6 +80,7 @@ function App() {
                   <td>{v.responsable}</td>
                   <td>{v.fecha}</td>
                   <td>{v.Estado}</td>
+                  <td><button className='btn btn-danger btn-sm' onClick={() => borrarDato(i)}>Borrar</button></td>
                 </tr>
               })
             }
